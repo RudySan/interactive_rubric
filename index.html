@@ -1,0 +1,830 @@
+<!doctype html>
+
+<html>
+
+	<head>
+		<title>Interactive Rubric</title>
+
+		<style type="text/css">
+
+			body {font-family:"Trebuchet MS", Helvetica, sans-serif; }
+
+			th, td {padding:8px;}
+
+			table {border-collapse:collapse;}
+
+			table, th, td {border:2px #2196F3 solid;}
+		
+			body {text-align:center;}
+
+			p {text-align:left;}
+
+			#colourOrange {background-color:orange;}
+
+			#colourNorm {background-color:white;}
+
+			#colourRed {background-color:red;}
+
+			#onclickH:hover {color:#f44336;}
+		</style>
+	</head>
+
+		<body>
+
+			<script type="text/javascript">
+
+				function MassColour()
+					{if 
+						(document.getElementById("MaxTot").innerHTML >= 1 && document.getElementById("MaxTot").innerHTML <= 6)
+
+						{document.getElementById("colourNorm").style.background = "#F44336";
+						
+						document.getElementById("textChangeTot").innerHTML = "This source is highly questionable. Should not be used in research without suitable justification. (Attach your reasons for using a source with this score).";}
+
+					if
+						(document.getElementById("MaxTot").innerHTML == 0)
+
+						{document.getElementById("colourNorm").style.background = "white";
+
+						document.getElementById("textChangeTot").innerHTML = "Please Select";}
+
+					if
+						(document.getElementById("MaxTot").innerHTML >= 7 && document.getElementById("MaxTot").innerHTML <= 10)
+
+						{document.getElementById("colourNorm").style.background = "#FF9800";
+
+						document.getElementById("textChangeTot").innerHTML = "The site may be an acceptable starting point for gathering information, but may not be suitable as a cited source in a research project.";}
+
+					if
+						(document.getElementById("MaxTot").innerHTML >= 11 && document.getElementById("MaxTot").innerHTML <= 14)
+
+						{document.getElementById("colourNorm").style.background = "#FFEB3B";
+
+						document.getElementById("textChangeTot").innerHTML = "Good source for research. Information should be confirmed in other sources.";}
+
+					if 
+						(document.getElementById("MaxTot").innerHTML >= 15 && document.getElementById("MaxTot").innerHTML <= 18)
+
+						{document.getElementById("colourNorm").style.background = "#4CAF50";
+
+						document.getElementById("textChangeTot").innerHTML = "Excellent source for research purposes.";}
+
+
+					}
+
+
+
+				function checkA3()
+					{if
+						(document.FA.A3.checked == true)
+
+						{document.FA.A2.checked = false;
+						document.FA.A1.checked = false;
+						document.FA.A0.checked = false;
+
+						document.getElementById("textChangeA").innerHTML = "3"}
+					}
+
+				function checkA2()
+					{if
+						(document.FA.A2.checked == true)
+
+						{document.FA.A3.checked = false;
+						document.FA.A1.checked = false;
+						document.FA.A0.checked = false;
+
+						document.getElementById("textChangeA").innerHTML = "2"}
+					} 
+
+				function checkA1()
+					{if
+						(document.FA.A1.checked == true)
+
+						{document.FA.A2.checked = false;
+						document.FA.A3.checked = false;
+						document.FA.A0.checked = false;
+
+						document.getElementById("textChangeA").innerHTML = "1"}
+					} 
+
+				function checkA0()
+					{if
+						(document.FA.A0.checked == true)
+
+						{document.FA.A2.checked = false;
+						document.FA.A1.checked = false;
+						document.FA.A3.checked = false;
+
+						document.getElementById("textChangeA").innerHTML = "0"}
+					}
+
+				function unCheckA()
+					{if
+						(document.FA.A1.checked == false && document.FA.A2.checked == false && document.FA.A2.checked == false && document.FA.A3.checked == false)
+
+						{document.getElementById("textChangeA").innerHTML = "0"}
+					} 
+
+				function checkB3()
+					{if
+						(document.FB.B3.checked == true)
+
+						{document.FB.B2.checked = false;
+						document.FB.B1.checked = false;
+						document.FB.B0.checked = false;
+
+						document.getElementById("textChangeB").innerHTML = "3"}
+					}
+
+				function checkB2()
+					{if
+						(document.FB.B2.checked == true)
+
+						{document.FB.B3.checked = false;
+						document.FB.B1.checked = false;
+						document.FB.B0.checked = false;
+
+						document.getElementById("textChangeB").innerHTML = "2"}
+					}
+
+				function checkB1()
+					{if
+						(document.FB.B1.checked == true)
+
+						{document.FB.B3.checked = false;
+						document.FB.B2.checked = false;
+						document.FB.B0.checked = false;
+
+						document.getElementById("textChangeB").innerHTML = "1"}
+					}
+
+				function checkB0()
+					{if
+						(document.FB.B0.checked == true)
+
+						{document.FB.B3.checked = false;
+						document.FB.B1.checked = false;
+						document.FB.B2.checked = false;
+
+						document.getElementById("textChangeB").innerHTML = "0"}
+					}
+
+				function unCheckB()
+					{if
+						(document.FB.B0.checked == false && document.FB.B1.checked == false && document.FB.B2.checked == false && document.FB.B3.checked == false)
+
+						{document.getElementById("textChangeB").innerHTML = "0"}
+					} 
+
+				function checkC3()
+					{if
+						(document.FC.C3.checked == true)
+
+						{document.FC.C0.checked = false;
+						document.FC.C1.checked = false;
+						document.FC.C2.checked = false;
+
+						document.getElementById("textChangeC").innerHTML = "3"}
+					}
+
+				function checkC2()
+					{if
+						(document.FC.C2.checked == true)
+
+						{document.FC.C0.checked = false;
+						document.FC.C1.checked = false;
+						document.FC.C3.checked = false;
+
+						document.getElementById("textChangeC").innerHTML = "2"}
+					}
+
+				function checkC1()
+					{if
+						(document.FC.C1.checked == true)
+
+						{document.FC.C0.checked = false;
+						document.FC.C3.checked = false;
+						document.FC.C2.checked = false;
+
+						document.getElementById("textChangeC").innerHTML = "1"}
+					}
+
+				function checkC0()
+					{if
+						(document.FC.C0.checked == true)
+
+						{document.FC.C3.checked = false;
+						document.FC.C1.checked = false;
+						document.FC.C2.checked = false;
+
+						document.getElementById("textChangeC").innerHTML = "0"}
+					}
+
+				function unCheckC()
+					{if
+						(document.FC.C0.checked == false && document.FC.C1.checked == false && document.FC.C2.checked == false && document.FC.C3.checked == false)
+
+						{document.getElementById("textChangeC").innerHTML = "0"}
+					} 
+
+				function checkD3()
+					{if
+						(document.FD.D3.checked == true)
+
+						{document.FD.D0.checked = false;
+						document.FD.D1.checked = false;
+						document.FD.D2.checked = false;
+
+						document.getElementById("textChangeD").innerHTML = "3"}
+					}
+
+				function checkD2()
+					{if
+						(document.FD.D2.checked == true)
+
+						{document.FD.D0.checked = false;
+						document.FD.D1.checked = false;
+						document.FD.D3.checked = false;
+
+						document.getElementById("textChangeD").innerHTML = "2"}
+					}
+
+				function checkD1()
+					{if
+						(document.FD.D1.checked == true)
+
+						{document.FD.D0.checked = false;
+						document.FD.D3.checked = false;
+						document.FD.D2.checked = false;
+
+						document.getElementById("textChangeD").innerHTML = "1"}
+					}
+
+				function checkD0()
+					{if
+						(document.FD.D0.checked == true)
+
+						{document.FD.D3.checked = false;
+						document.FD.D1.checked = false;
+						document.FD.D2.checked = false;
+
+						document.getElementById("textChangeD").innerHTML = "0"}
+					}
+
+				function unCheckD()
+					{if
+						(document.FD.D0.checked == false && document.FD.D1.checked == false && document.FD.D2.checked == false && document.FD.D3.checked == false)
+
+						{document.getElementById("textChangeD").innerHTML = "0"}
+					} 
+
+				function checkE3()
+					{if
+						(document.FE.E3.checked == true)
+
+						{document.FE.E0.checked = false;
+						document.FE.E1.checked = false;
+						document.FE.E2.checked = false;
+
+						document.getElementById("textChangeE").innerHTML = "3"}
+					}
+
+				function checkE2()
+					{if
+						(document.FE.E2.checked == true)
+
+						{document.FE.E0.checked = false;
+						document.FE.E1.checked = false;
+						document.FE.E3.checked = false;
+
+						document.getElementById("textChangeE").innerHTML = "2"}
+					}
+
+				function checkE1()
+					{if
+						(document.FE.E1.checked == true)
+
+						{document.FE.E0.checked = false;
+						document.FE.E3.checked = false;
+						document.FE.E2.checked = false;
+
+						document.getElementById("textChangeE").innerHTML = "1"}
+					}
+
+				function checkE0()
+					{if
+						(document.FE.E0.checked == true)
+
+						{document.FE.E3.checked = false;
+						document.FE.E1.checked = false;
+						document.FE.E2.checked = false;
+
+						document.getElementById("textChangeE").innerHTML = "0"}
+					}
+
+				function unCheckE()
+					{if
+						(document.FE.E3.checked == false && document.FE.E2.checked == false && document.FE.E1.checked == false && document.FE.E0.checked == false)
+
+						{document.getElementById("textChangeE").innerHTML = "0"}
+					}
+
+				function checkF3()
+					{if
+						(document.FF.F3.checked == true)
+
+						{document.FF.F0.checked = false;
+						document.FF.F1.checked = false;
+						document.FF.F2.checked = false;
+
+						document.getElementById("textChangeF").innerHTML = "3"}
+					}
+
+				function checkF2()
+					{if
+						(document.FF.F2.checked == true)
+
+						{document.FF.F0.checked = false;
+						document.FF.F1.checked = false;
+						document.FF.F3.checked = false;
+
+						document.getElementById("textChangeF").innerHTML = "2"}
+					}
+
+				function checkF1()
+					{if
+						(document.FF.F1.checked == true)
+
+						{document.FF.F0.checked = false;
+						document.FF.F3.checked = false;
+						document.FF.F2.checked = false;
+
+						document.getElementById("textChangeF").innerHTML = "1"}
+					}
+
+				function checkF0()
+					{if
+						(document.FF.F0.checked == true)
+
+						{document.FF.F3.checked = false;
+						document.FF.F1.checked = false;
+						document.FF.F2.checked = false;
+
+						document.getElementById("textChangeF").innerHTML = "0"}
+					}
+
+				function unCheckF()
+					{if 
+						(document.FF.F3.checked == false && document.FF.F2.checked == false && document.FF.F1.checked == false && document.FF.F0.checked == false)
+
+						{document.getElementById("textChangeF").innerHTML = "0"}
+					}
+
+				function addTotalSum(){
+
+					var a3 = 0;
+					var a2 = 0;
+					var a1 = 0;
+					var a0 = 0;
+
+					var b3 = 0;
+					var b2 = 0;
+					var b1 = 0;
+					var b0 = 0;
+
+					var c3 = 0;
+					var c2 = 0;
+					var c1 = 0;
+					var c0 = 0;
+
+					var d3 = 0;
+					var d2 = 0;
+					var d1 = 0;
+					var d0 = 0;
+
+					var e3 = 0;
+					var e2 = 0;
+					var e1 = 0;
+					var e0 = 0;
+
+					var f3 = 0;
+					var f2 = 0;
+					var f1 = 0;
+					var f0 = 0;
+
+					if
+						(document.FA.A3.checked == true)
+
+						{var a3 = 3;}
+					
+
+					if
+						(document.FA.A2.checked == true)
+
+						{var a2 = 2;}
+					
+
+					if
+						(document.FA.A1.checked == true)
+
+						{var a1 = 1;}
+						
+
+					if
+						(document.FA.A0.checked == true)
+
+						{var a0 = 0;}
+					
+
+					if
+						(document.FB.B3.checked == true)
+
+						{var b3 = 3;}
+					
+
+					if
+						(document.FB.B2.checked == true)
+
+						{var b2 = 2;}
+					
+
+					if
+						(document.FB.B1.checked == true)
+
+						{var b1 = 1;}
+					
+
+					if
+						(document.FB.B0.checked == true)
+
+						{var b0 = 0;}
+
+					if
+						(document.FC.C3.checked == true)
+
+						{var c3 = 3;}
+
+					if
+						(document.FC.C2.checked == true)
+
+						{var c2 = 2;}
+
+					if
+						(document.FC.C1.checked == true)
+
+						{var c1 = 1;}
+
+					if
+						(document.FC.C0.checked == true)
+
+						{var c0 = 0;}
+
+					if
+						(document.FD.D3.checked == true)
+
+						{var d3 = 3;}
+
+					if
+						(document.FD.D2.checked == true)
+
+						{var d2 = 2;}
+
+					if
+						(document.FD.D1.checked == true)
+
+						{var d1 = 1;}
+
+					if
+						(document.FD.D0.checked == true)
+
+						{var d0 = 0;}
+
+					if
+						(document.FE.E3.checked == true)
+
+						{var e3 = 3;}
+
+					if
+						(document.FE.E2.checked == true)
+
+						{var e2 = 2;}
+
+					if
+						(document.FE.E1.checked == true)
+
+						{var e1 = 1;}
+
+					if
+						(document.FE.E0.checked == true)
+
+						{var e0 = 0;}
+
+					if
+						(document.FF.F3.checked == true)
+
+						{var f3 = 3;}
+
+					if
+						(document.FF.F2.checked == true)
+
+						{var f2 = 2;}
+
+					if
+						(document.FF.F2.checked == true)
+
+						{var f2 = 2;}
+
+					if
+						(document.FF.F1.checked == true)
+
+						{var f1 = 1;}
+					
+				if
+						(document.FF.F0.checked == true)
+
+						{var f0 = 0;}
+
+				var sumTotal = a3 + a2 + a1 + a0 + b3 + b2 + b1 + b0 + c3 + c2 + c1 + c0 + d3 + d2 + d1 + d0 + e3 + e2 + e1 + e0 + f3 + f2 + f1 + f0;
+
+				document.getElementById("MaxTot").innerHTML = (sumTotal);
+
+				}
+
+
+
+
+			</script>
+
+			<table cellpadding="5" width="100%">
+				<caption>Interactive Rubric</caption>
+
+				<tr>
+					<th></th>
+					<th></th>
+					<th><h2>3</h2></th>
+					<th><h2>2</h2></th>
+					<th><h2>1</h2></th>
+					<th><h2>0</h2></th>
+				</tr>
+
+				<tr>
+					<form name="FA">
+
+					<td><h2 id="textChangeA">0</h2></td>
+
+					<td>
+						<strong>Author</strong>:<br /> What are the authors 
+						<br />credentials and affiliation?
+						<br /> Is the author an expert?
+					</td>
+
+					<td id="onclickH">
+						The authors
+						<br /> credentials indicate
+						<br /> that he/she is an
+						<br /> expert on this topic.
+						<br /> The author gives 
+						<br /> contact info or
+						<br /> professional
+						<br /> affiliation.
+
+						<input type="checkbox" name="A3" onClick="checkA3(); unCheckA(); addTotalSum(); MassColour();">
+					</td>
+
+					<td  id="onclickH">
+						The author is named but credentials and/or contact info (online sources) is incomplete
+
+						<input type="checkbox" name="A2" onClick="checkA2(); unCheckA(); addTotalSum(); MassColour();">
+					</td>
+
+					<td  id="onclickH">
+						The author is unnamed and/or no credentials are given.
+
+						<input type="checkbox" name="A1" onClick="checkA1(); unCheckA(); addTotalSum(); MassColour();">
+					</td>
+
+					<td  id="onclickH">
+						The author is named, but is clearly not an expert on the topic (published by student or fans).
+
+						<input type="checkbox" name="A0" onClick="checkA0(); unCheckA(); addTotalSum(); MassColour();">
+					</td>
+
+					</form>
+				</tr>
+
+				<tr>
+					<form name="FB">
+
+					<td><h2 id="textChangeB">0</h2></td>
+
+					<td>
+						<strong>Publisher</strong>:
+						<br />Is the source published by a reputable publisher or organization?
+					</td>
+
+					<td id="onclickH">
+						Published by:
+
+						<br />*U.S. Government (.gov)
+
+						<br />*Scholarly Journal or in a Reference or academic book
+
+						<input type="checkbox" name="B3" onClick="checkB3(); unCheckB(); addTotalSum(); MassColour();">
+					</td>
+
+					<td id="onclickH">
+						Published by a known:
+						<br />*organization
+						<br />*university
+						<br />*business
+						<br />*magazine/newspaper
+						<br />or in a print book
+
+						<input type="checkbox" name="B2" onClick="checkB2(); unCheckB(); addTotalSum(); MassColour();">
+					</td>
+
+					<td id="onclickH">
+						Published by:
+						<br />*a K-12 school
+						<br />*an unknown business(.com)
+						<br />*an unknown organization (.org)
+
+						<input type="checkbox" name="B1"  onClick="checkB1(); unCheckB(); addTotalSum(); MassColour();">
+					</td>
+
+					<td id="onclickH">
+						Self-published:
+						<br />blogs, personal web pages, etc.
+						<br />Look for the symbols ~% or the words users members etc. in the URL
+
+						<input type="checkbox" name="B0" onClick="checkB0(); unCheckB(); addTotalSum(); MassColour();">
+					</td>
+
+					</form>
+				</tr>
+
+				<tr>
+					<form name="FC">
+
+					<td><h2 id="textChangeC">0</h2></td>
+
+					<td>
+						<strong>Sources Cited</strong>:
+						<br />Is the information cited?
+					</td>
+
+					<td id="onclickH">
+						The work is original research/info by a reputable source.  There is a Works Cited list and/or a Bibliography.
+
+						<input type="checkbox" name="C3" onClick="checkC3(); unCheckC(); addTotalSum(); MassColour();">
+					</td>
+
+					<td id="onclickH">
+						The work is a compilation of research/info by a reputable source. No Works Cited information as a list.
+
+						<input type="checkbox" name="C2" onClick="checkC2(); unCheckC(); addTotalSum(); MassColour();">
+					</td>
+
+					<td id="onclickH">
+						There is a statement about the source of information embedded in the source, but no Works Cited list.
+
+						<input type="checkbox" name="C1" onClick="checkC1(); unCheckC(); addTotalSum(); MassColour();">
+					</td>
+
+					<td id="onclickH">
+						No indication of where the information came from.
+
+						<input type="checkbox" name="C0" onClick="checkC0(); unCheckC(); addTotalSum(); MassColour();">
+					</td>
+
+					</form>
+				</tr>
+
+				<tr>
+					<form name="FD">
+
+					<td><h2 id="textChangeD">0</h2></td>
+
+					<td>
+						<strong>Purpose</strong>: Why was this information published?
+					</td>
+
+					<td id="onclickH">
+						To promote scholarly research.
+
+						<input type="checkbox" name="D3" onClick="checkD3(); unCheckD(); addTotalSum(); MassColour();">
+					</td>
+
+					<td id="onclickH">
+						To provide factual information. Some opinion may be included.
+
+						<input type="checkbox" name="D2" onClick="checkD2(); unCheckD(); addTotalSum(); MassColour();">
+					</td>
+
+					<td id="onclickH">
+						To sell something, to persuade, or to promote an idea.
+
+						<input type="checkbox" name="D1" onClick="checkD1(); unCheckD(); addTotalSum(); MassColour();">
+					</td>
+
+					<td id="onclickH">
+						For personal or entertainment purposes.
+
+						<input type="checkbox" name="D0" onClick="checkD0(); unCheckD(); addTotalSum(); MassColour();">
+					</td>
+
+					</form>
+				</tr>
+
+				<tr>
+					<form name="FE">
+
+					<td><h2 id="textChangeE">0</h2></td>
+
+					<td>
+						<strong>Date</strong>: How current is the information?
+					</td>
+
+					<td id="onclickH">
+						Online: The info is less than 1 year old. Print: The info is less than 3 years old.
+
+						<input type="checkbox" name="E3" onClick="checkE3(); unCheckE(); addTotalSum(); MassColour();">
+					</td>
+
+					<td id="onclickH">
+						Online: The info is less than 3 years old. Print: The information is more than 3 years old, but is not necessarily out of date.
+
+						<input type="checkbox" name="E2" onClick="checkE2(); unCheckE(); addTotalSum(); MassColour();">
+					</td>
+
+					<td id="onclickH">
+						The information is more than five years old.
+
+						<input type="checkbox" name="E1" onClick="checkE1(); unCheckE(); addTotalSum(); MassColour();">
+					</td>
+
+					<td id="onclickH">
+						There is no indication of when the information was published.
+
+						<input type="checkbox" name="E0" onClick="checkE0(); unCheckE(); addTotalSum(); MassColour();">
+					</td>
+
+					</form>
+				</tr>
+
+				<tr>
+					<form name="FF">
+
+					<td><h2 id="textChangeF">0</h2></td>
+
+					<td>
+						<strong>Substance:</strong>
+					</td>
+
+					<td id="onclickH">
+						Depth of coverage needed for your purpose and written at a college or professional level.
+
+						<input type="checkbox" name="F3" onClick="checkF3(); unCheckF(); addTotalSum(); MassColour();">
+					</td>
+
+					<td id="onclickH">
+						Written for the general public.
+
+						<input type="checkbox" name="F2" onClick="checkF2(); unCheckF(); addTotalSum(); MassColour();">
+					</td>
+
+					<td id="onclickH">
+						Lacking the depth needed for your purpose.
+
+						<input type="checkbox" name="F1" onClick="checkF1(); unCheckF(); addTotalSum(); MassColour();">
+					</td>
+
+					<td id="onclickH">
+						excessive colloquialisms, slang, use of I
+
+						<input type="checkbox" name="F0" onClick="checkF0(); unCheckF(); addTotalSum(); MassColour();">
+
+					</td>
+
+					</form>
+
+				</tr>
+
+				<tr>
+					<td><h1 id="MaxTot">0</h1></td>
+
+					<td colspan="5" id="colourNorm"><div id="textChangeTot">Please Select</div></td>
+				</tr>
+			</table>
+
+			<hr />
+
+			<p>0-6	This source is highly questionable. Should not be used in research without suitable justification. (Attach your reasons for using a source with this score)
+			   <br />7-10	The site may be an acceptable starting point for gathering information, but may not be suitable as a cited source in a research project
+			   <br />11-14	Good source for research. Information should be confirmed in other sources
+			   <br />15-18	Excellent source for research purposes
+				</p>
+
+		</body>
+
+</html>

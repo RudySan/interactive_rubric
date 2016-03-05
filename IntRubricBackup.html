@@ -1,0 +1,565 @@
+<!doctype html>
+
+<html>
+
+	<head>
+		<title>Interactive Rubric</title>
+
+		<style type="text/css">
+			body {text-align:center;}
+
+			p {text-align:left;}
+
+			#onclickH:hover {color:#f44336;}
+		</style>
+	</head>
+
+		<body>
+
+			<script type="text/javascript">
+
+				function checkA3()
+					{if
+						(document.FA.A3.checked == true)
+
+						{document.FA.A2.checked = false;
+						document.FA.A1.checked = false;
+						document.FA.A0.checked = false;
+
+						var elem = document.getElementById("textChangeA")
+						elem.innerHTML = "3"}
+					} 
+
+				function checkA2()
+					{if
+						(document.FA.A2.checked == true)
+
+						{document.FA.A3.checked = false;
+						document.FA.A1.checked = false;
+						document.FA.A0.checked = false;
+
+						var elem = document.getElementById("textChangeA")
+						elem.innerHTML = "2"}
+					} 
+
+				function checkA1()
+					{if
+						(document.FA.A1.checked == true)
+
+						{document.FA.A2.checked = false;
+						document.FA.A3.checked = false;
+						document.FA.A0.checked = false;
+
+						var elem = document.getElementById("textChangeA")
+						elem.innerHTML = "1"}
+					} 
+
+				function checkA0()
+					{if
+						(document.FA.A0.checked == true)
+
+						{document.FA.A2.checked = false;
+						document.FA.A1.checked = false;
+						document.FA.A3.checked = false;
+
+						var elem = document.getElementById("textChangeA")
+						elem.innerHTML = "0"}
+					} 
+
+				function checkB3()
+					{if
+						(document.FB.B3.checked == true)
+
+						{document.FB.B2.checked = false;
+						document.FB.B1.checked = false;
+						document.FB.B0.checked = false;
+
+						var elem = document.getElementById("textChangeB")
+						elem.innerHTML = "3"}
+					}
+
+				function checkB2()
+					{if
+						(document.FB.B2.checked == true)
+
+						{document.FB.B3.checked = false;
+						document.FB.B1.checked = false;
+						document.FB.B0.checked = false;
+
+						var elem = document.getElementById("textChangeB")
+						elem.innerHTML = "2"}
+					}
+
+				function checkB1()
+					{if
+						(document.FB.B1.checked == true)
+
+						{document.FB.B3.checked = false;
+						document.FB.B2.checked = false;
+						document.FB.B0.checked = false;
+
+						var elem = document.getElementById("textChangeB")
+						elem.innerHTML = "1"}
+					}
+
+				function checkB0()
+					{if
+						(document.FB.B0.checked == true)
+
+						{document.FB.B3.checked = false;
+						document.FB.B1.checked = false;
+						document.FB.B2.checked = false;
+
+						var elem = document.getElementById("textChangeB")
+						elem.innerHTML = "0"}
+					}
+
+				function checkC3()
+					{if
+						(document.FC.C3.checked == true)
+
+						{document.FC.C0.checked = false;
+						document.FC.C1.checked = false;
+						document.FC.C2.checked = false;
+
+						var elem = document.getElementById("textChangeC")
+						elem.innerHTML = "3"}
+					}
+
+				function checkC2()
+					{if
+						(document.FC.C2.checked == true)
+
+						{document.FC.C0.checked = false;
+						document.FC.C1.checked = false;
+						document.FC.C3.checked = false;
+
+						var elem = document.getElementById("textChangeC")
+						elem.innerHTML = "2"}
+					}
+
+				function checkC1()
+					{if
+						(document.FC.C1.checked == true)
+
+						{document.FC.C0.checked = false;
+						document.FC.C3.checked = false;
+						document.FC.C2.checked = false;
+
+						var elem = document.getElementById("textChangeC")
+						elem.innerHTML = "1"}
+					}
+
+				function checkC0()
+					{if
+						(document.FC.C0.checked == true)
+
+						{document.FC.C3.checked = false;
+						document.FC.C1.checked = false;
+						document.FC.C2.checked = false;
+
+						var elem = document.getElementById("textChangeC")
+						elem.innerHTML = "0"}
+					}
+
+				function checkD3()
+					{if
+						(document.FD.D3.checked == true)
+
+						{document.FD.D0.checked = false;
+						document.FD.D1.checked = false;
+						document.FD.D2.checked = false;
+
+						var elem = document.getElementById("textChangeD")
+						elem.innerHTML = "3"}
+					}
+
+				function checkD2()
+					{if
+						(document.FD.D2.checked == true)
+
+						{document.FD.D0.checked = false;
+						document.FD.D1.checked = false;
+						document.FD.D3.checked = false;
+
+						var elem = document.getElementById("textChangeD")
+						elem.innerHTML = "2"}
+					}
+
+				function checkD1()
+					{if
+						(document.FD.D1.checked == true)
+
+						{document.FD.D0.checked = false;
+						document.FD.D3.checked = false;
+						document.FD.D2.checked = false;
+
+						var elem = document.getElementById("textChangeD")
+						elem.innerHTML = "1"}
+					}
+
+				function checkD0()
+					{if
+						(document.FD.D0.checked == true)
+
+						{document.FD.D3.checked = false;
+						document.FD.D1.checked = false;
+						document.FD.D2.checked = false;
+
+						var elem = document.getElementById("textChangeD")
+						elem.innerHTML = "0"}
+					}
+
+				function checkE3()
+					{if
+						(document.FE.E3.checked == true)
+
+						{document.FE.E0.checked = false;
+						document.FE.E1.checked = false;
+						document.FE.E2.checked = false;
+
+						var elem = document.getElementById("textChangeE")
+						elem.innerHTML = "3"}
+					}
+
+				function checkE2()
+					{if
+						(document.FE.E2.checked == true)
+
+						{document.FE.E0.checked = false;
+						document.FE.E1.checked = false;
+						document.FE.E3.checked = false;
+
+						var elem = document.getElementById("textChangeE")
+						elem.innerHTML = "2"}
+					}
+
+				function checkE1()
+					{if
+						(document.FE.E1.checked == true)
+
+						{document.FE.E0.checked = false;
+						document.FE.E3.checked = false;
+						document.FE.E2.checked = false;
+
+						var elem = document.getElementById("textChangeE")
+						elem.innerHTML = "1"}
+					}
+
+				function checkE0()
+					{if
+						(document.FE.E0.checked == true)
+
+						{document.FE.E3.checked = false;
+						document.FE.E1.checked = false;
+						document.FE.E2.checked = false;
+
+						var elem = document.getElementById("textChangeE")
+						elem.innerHTML = "0"}
+					}
+
+				function checkF3()
+					{if
+						(document.FF.F3.checked == true)
+
+						{document.FF.F0.checked = false;
+						document.FF.F1.checked = false;
+						document.FF.F2.checked = false;
+
+						var elem = document.getElementById("textChangeF")
+						elem.innerHTML = "3"}
+					}
+
+				function checkF2()
+					{if
+						(document.FF.F2.checked == true)
+
+						{document.FF.F0.checked = false;
+						document.FF.F1.checked = false;
+						document.FF.F3.checked = false;
+
+						var elem = document.getElementById("textChangeF")
+						elem.innerHTML = "2"}
+					}
+
+				function checkF1()
+					{if
+						(document.FF.F1.checked == true)
+
+						{document.FF.F0.checked = false;
+						document.FF.F3.checked = false;
+						document.FF.F2.checked = false;
+
+						var elem = document.getElementById("textChangeF")
+						elem.innerHTML = "1"}
+					}
+
+				function checkF0()
+					{if
+						(document.FF.F0.checked == true)
+
+						{document.FF.F3.checked = false;
+						document.FF.F1.checked = false;
+						document.FF.F2.checked = false;
+
+						var elem = document.getElementById("textChangeF")
+						elem.innerHTML = "0"}
+					}
+
+			</script>
+
+			<table border="1" cellpadding="5" width="100%">
+				<tr>
+					<th></th>
+					<th>3</th>
+					<th>2</th>
+					<th>1</th>
+					<th>0</th>
+				</tr>
+
+				<tr>
+					<form name="FA">
+
+					<td>
+						<strong>Author</strong>:<br /> What are the authors 
+						<br />credentials and affiliation?
+						<br /> Is the author an expert?
+					</td>
+
+					<td id="onclickH">
+						The authors
+						<br /> credentials indicate
+						<br /> that he/she is an
+						<br /> expert on this topic.
+						<br /> The author gives 
+						<br /> contact info or
+						<br /> professional
+						<br /> affiliation.
+
+						<input type="checkbox" name="A3" onClick="checkA3()">
+					</td>
+
+					<td  id="onclickH">
+						The author is named but credentials and/or contact info (online sources) is incomplete
+
+						<input type="checkbox" name="A2" onClick="checkA2()">
+					</td>
+
+					<td  id="onclickH">
+						The author is unnamed and/or no credentials are given.
+
+						<input type="checkbox" name="A1" onClick="checkA1()">
+					</td>
+
+					<td  id="onclickH">
+						The author is named, but is clearly not an expert on the topic (published by student or fans).
+
+						<input type="checkbox" name="A0" onClick="checkA0()">
+					</td>
+
+					</form>
+				</tr>
+
+				<tr>
+					<form name="FB">
+
+					<td>
+						<strong>Publisher</strong>:
+						<br />Is the source published by a reputable publisher or organization?
+					</td>
+
+					<td id="onclickH">
+						Published by:
+
+						<br />*U.S. Government (.gov)
+
+						<br />*Scholarly Journal or in a Reference or academic book
+
+						<input type="checkbox" name="B3" onClick="checkB3()">
+					</td>
+
+					<td id="onclickH">
+						Published by a known:
+						<br />*organization
+						<br />*university
+						<br />*business
+						<br />*magazine/newspaper
+						<br />or in a print book
+
+						<input type="checkbox" name="B2" onClick="checkB2()">
+					</td>
+
+					<td id="onclickH">
+						Published by:
+						<br />*a K-12 school
+						<br />*an unknown business(.com)
+						<br />*an unknown organization (.org)
+
+						<input type="checkbox" name="B1"  onClick="checkB1()">
+					</td>
+
+					<td id="onclickH">
+						Self-published:
+						<br />blogs, personal web pages, etc.
+						<br />Look for the symbols ~% or the words users members etc. in the URL
+
+						<input type="checkbox" name="B0" onClick="checkB0()">
+					</td>
+
+					</form>
+				</tr>
+
+				<tr>
+					<form name="FC">
+
+					<td>
+						<strong>Sources Cited</strong>:
+						<br />Is the information cited?
+					</td>
+
+					<td id="onclickH">
+						The work is original research/info by a reputable source.  There is a Works Cited list and/or a Bibliography.
+
+						<input type="checkbox" name="C3" onClick="checkC3()">
+					</td>
+
+					<td id="onclickH">
+						The work is a compilation of research/info by a reputable source. No Works Cited information as a list.
+
+						<input type="checkbox" name="C2" onClick="checkC2()">
+					</td>
+
+					<td id="onclickH">
+						There is a statement about the source of information embedded in the source, but no Works Cited list.
+
+						<input type="checkbox" name="C1" onClick="checkC1()">
+					</td>
+
+					<td id="onclickH">
+						No indication of where the information came from.
+
+						<input type="checkbox" name="C0" onClick="checkC0()">
+					</td>
+
+					</form>
+				</tr>
+
+				<tr>
+					<form name="FD">
+
+					<td>
+						<strong>Purpose</strong>: Why was this information published?
+					</td>
+
+					<td id="onclickH">
+						To promote scholarly research.
+
+						<input type="checkbox" name="D3" onClick="checkD3()">
+					</td>
+
+					<td id="onclickH">
+						To provide factual information. Some opinion may be included.
+
+						<input type="checkbox" name="D2" onClick="checkD2()">
+					</td>
+
+					<td id="onclickH">
+						To sell something, to persuade, or to promote an idea.
+
+						<input type="checkbox" name="D1" onClick="checkD1()">
+					</td>
+
+					<td id="onclickH">
+						For personal or entertainment purposes.
+
+						<input type="checkbox" name="D0" onClick="checkD0()">
+					</td>
+
+					</form>
+				</tr>
+
+				<tr>
+					<form name="FE">
+
+					<td>
+						<strong>Date</strong>: How current is the information?
+					</td>
+
+					<td id="onclickH">
+						Online: The info is less than 1 year old. Print: The info is less than 3 years old.
+
+						<input type="checkbox" name="E3" onClick="checkE3()">
+					</td>
+
+					<td id="onclickH">
+						Online: The info is less than 3 years old. Print: The information is more than 3 years old, but is not necessarily out of date.
+
+						<input type="checkbox" name="E2" onClick="checkE2()">
+					</td>
+
+					<td id="onclickH">
+						The information is more than five years old.
+
+						<input type="checkbox" name="E1" onClick="checkE1()">
+					</td>
+
+					<td id="onclickH">
+						There is no indication of when the information was published.
+
+						<input type="checkbox" name="E0" onClick="checkE0()">
+					</td>
+
+					</form>
+				</tr>
+
+				<tr>
+					<form name="FF">
+
+					<td>
+						<strong>Substance:</strong>
+					</td>
+
+					<td id="onclickH">
+						Depth of coverage needed for your purpose and written at a college or professional level.
+
+						<input type="checkbox" name="F3" onClick="checkF3()">
+					</td>
+
+					<td id="onclickH">
+						Written for the general public.
+
+						<input type="checkbox" name="F2" onClick="checkF2()">
+					</td>
+
+					<td id="onclickH">
+						Lacking the depth needed for your purpose.
+
+						<input type="checkbox" name="F1" onClick="checkF1()">
+					</td>
+
+					<td id="onclickH">
+						excessive colloquialisms, slang, use of I
+
+						<input type="checkbox" name="F0" onClick="checkF0()">
+
+					</td>
+
+					</form>
+
+				</tr>
+			</table>
+
+			<p>Author: <strong id="textChangeA"></strong></p>
+			<p>Publisher: <strong id="textChangeB"></strong></p>
+			<p>Sources Cited: <strong id="textChangeC"></strong></p>
+			<p>Purpose: <strong id="textChangeD"></strong></p>
+			<p>Date: <strong id="textChangeE"></strong></p>
+			<p>Substance: <strong id="textChangeF"></strong></p>
+
+			<hr />
+
+			<script>
+			</script>
+		</body>
+
+</html>
